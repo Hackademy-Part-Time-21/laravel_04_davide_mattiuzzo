@@ -11,7 +11,7 @@
                 <a class="nav-link" href="servizi">Servizi</a>
             </div>
             <div class="d-flex">
-                <a class="nav-link" href="servizi">{{ $utente }}</a>
+                <a class="nav-link">{{ $utente }}</a>
             </div>
         </div>
     </div>
