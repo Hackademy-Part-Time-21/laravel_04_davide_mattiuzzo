@@ -1,7 +1,11 @@
-@extends('layout.app')
-@section('title', 'welcome')
+<x-layout.app :titolo=$titolo>
 
+@if($auth)
+<x-header :nome="$auth['name']" :cognome="$auth['surname']" />
+@else
+<h3>Non sei loggato</h3>
+@endif
 
-@section('container')
-<h1> welcome</h1>
-@endsection
+{{ config('app.mail') }}
+
+</x-layout.app>

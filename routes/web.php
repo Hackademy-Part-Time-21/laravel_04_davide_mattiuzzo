@@ -13,13 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[\App\Http\Controllers\PageController::class,'home'])->name('home');
 
-Route::get('/chi_siamo', function () {
-    return view('chi_siamo');
-});
+Route::get('/chi_siamo',[\App\Http\Controllers\PageController::class,'chisiamo'])->name('chisiamo');
 
 Route::get('/servizi', function () {
     $servizi = [
@@ -33,7 +29,7 @@ Route::get('/servizi', function () {
             'costo_servizio' => 18,50,
             'descrizione_servizio' => 'Pizza con patatine',
         ],
-        3 => [  
+        3 => [
             'nome_servizio' => 'Pizzakebab',
             'costo_servizio' => 28,00,
             'descrizione_servizio' => 'Pizza kebab con tutto',
@@ -55,7 +51,7 @@ Route::get('/servizi/{id}', function ($id) {
             'costo_servizio' => 18,50,
             'descrizione_servizio' => 'Pizza con patatine',
         ],
-        3 => [  
+        3 => [
             'nome_servizio' => 'Pizzakebab',
             'costo_servizio' => 28,00,
             'descrizione_servizio' => 'Pizza kebab con tutto',
@@ -64,5 +60,5 @@ Route::get('/servizi/{id}', function ($id) {
     $servizio[0] = $servizi[$id];
     return view('servizi', ['array_servizi' => $servizio]);
 
-    
+
 });

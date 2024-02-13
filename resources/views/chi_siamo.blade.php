@@ -1,7 +1,6 @@
-@extends('layout.app')
-@section('title', 'Chi siamo')
+<x-layout.app>
 
+    <h1>{{$titolo}}</h1>
+    <h3>{{$sottotitolo}}</h3>
 
-@section('container')
-<h1> chi siamo</h1>
-@endsection
+</x-layout.app>
